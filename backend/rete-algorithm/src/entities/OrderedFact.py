@@ -6,7 +6,7 @@
     @author Claudio Greco, Daniele Negro, Marco Di Pietro
 """
 
-from core.entities.Fact import Fact
+from src.entities.Fact import Fact
 
 
 class OrderedFact(Fact):

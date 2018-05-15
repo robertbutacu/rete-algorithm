@@ -6,7 +6,7 @@
     @author Claudio Greco, Daniele Negro, Marco Di Pietro
 """
 
-from core.typesystem.TypeSystem import FunctionCallType
+from src.typesystem.TypeSystem import FunctionCallType
 
 
 class Rule(object):
