@@ -1,0 +1,12 @@
+.add_style {
+    border-radius: 100px;
+    background: rgb(33, 157, 173);
+    padding: 20px; 
+    border-style: solid;
+    border-color: black;
+    border-width: 1px;
+    color: white;
+    /* width: 200px;
+    height: 150px;  */
+
+}
