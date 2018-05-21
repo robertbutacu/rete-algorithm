@@ -5,6 +5,7 @@
     An expert system shell inspired by CLIPS syntax
     @author Claudio Greco, Daniele Negro, Marco Di Pietro
 """
+from src.functions.SpecialFunctions import SpecialFunctions
 from src.parser.Parser import Parser
 
 from src.typesystem.TypeSystem import *
@@ -12,8 +13,6 @@ from src.typesystem.TypeSystem import *
 from src.Evaluator import Evaluator
 
 from src.functions.FunctionMapper import FunctionMapper
-
-from src.functions.SpecialFunctions import SpecialFunctions
 
 from src.functions.Functions import Functions
 

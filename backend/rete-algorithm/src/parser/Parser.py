@@ -90,7 +90,7 @@ GLOBAL_VARIABLE.setParseAction(lambda s, l, t: GlobalVariableType(t[0]))
 SPECIAL_FUNCTION_NAMES = (pp.Keyword('assert') | pp.Keyword('retract') | pp.Keyword('bind'))
 
 # Defines the name of a function excluding the keyboards reserved to the special function calls.
-FUNCTION_NAME = ~SPECIAL_FUNCTION_NAMES + pp.Word(pp.printables.translate(None, '()' + pp.nums), pp.printables.translate(None, '()'))
+FUNCTION_NAME = ~SPECIAL_FUNCTION_NAMES + pp.Word(pp.printables.translate('()' + pp.nums), pp.printables.translate('()'))
 
 # Defines a constant.
 CONSTANT = BOOLEAN | SYMBOL | STRING | FLOAT | INTEGER

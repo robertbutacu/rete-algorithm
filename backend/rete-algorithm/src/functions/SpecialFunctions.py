@@ -2,8 +2,8 @@
 
 import sys
 
-from Module import unpack_args, Module
-
+from src.functions.Module import Module
+from src.functions.Module import unpack_args
 from src.typesystem.TypeSystem import *
 
 from src.entities.OrderedFact import OrderedFact

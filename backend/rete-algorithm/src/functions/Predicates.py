@@ -8,8 +8,7 @@
 
 import operator as op
 
-from Module import unpack_args, Module
-
+from src.functions.Module import Module, unpack_args
 from src.typesystem.TypeSystem import *
 
 from src.exceptions.Exceptions import EvaluateException

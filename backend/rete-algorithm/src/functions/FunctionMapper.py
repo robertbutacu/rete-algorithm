@@ -5,10 +5,10 @@
     An expert system shell inspired by CLIPS syntax
     @author Claudio Greco, Daniele Negro, Marco Di Pietro
 """
-
+import importlib
 import os
 
-from inspect import imp, getmembers
+from inspect import getmembers, isclass
 
 from src.exceptions.Exceptions import EvaluateException
 
@@ -49,11 +49,11 @@ class FunctionMapper(object):
 
         # If the file has .py extension, then it loads that module.
         if file_ext.lower() == '.py':
-            py_mod = imp.load_source(mod_name, filename)
+            py_mod = importlib.import_module(filename)
 
         # If the file has .pyc extension, then it loads that module.
         elif file_ext.lower() == '.pyc':
-            py_mod = imp.load_compiled(mod_name, filename)
+            py_mod = importlib.import_module(filename)
 
         else:
             raise EvaluateException('Unable to find the file ' + filename + '!')
