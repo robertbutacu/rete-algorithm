@@ -458,7 +458,8 @@ class TestsNode(Node):
         # and the global variables, then it saves
         # the tests which involve these variables
         # to the specified tests set.
-        for v in set(alpha_variables.keys() + var_globals):
+        #TODO changed here
+        for v in set(list(alpha_variables) + list(var_globals)):
             if v in tests:
                 self.__tests.update(tests[v])
                 del tests[v]

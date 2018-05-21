@@ -6,6 +6,7 @@
     An expert system shell inspired by CLIPS syntax
     @author Claudio Greco, Daniele Negro, Marco Di Pietro
 """
+import copy
 
 from src.ProductionMemory import ProductionMemory
 from src.WorkingMemory import WorkingMemory
@@ -146,6 +147,7 @@ class Network(object):
         self.__alpha_memory_patterns = {}
 
     def build_network(self, facts, rules):
+        graphs = []
         # Resets the network.
         self.reset_network()
 
@@ -155,11 +157,13 @@ class Network(object):
 
         for rule in rules:
             self.add_rule(rule)
+            graphs.append(copy.deepcopy(self))
 
         # Executes the initial matching ot the network.
 
-        for fact in facts:
-            self.assert_fact(fact)
+        #for fact in facts:
+        #    self.assert_fact(fact)
+        return graphs
 
     def recognize_act_iteration(self, next_activation):
         # If the specified activation is valid, then it executes that activation.
