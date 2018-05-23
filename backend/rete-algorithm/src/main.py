@@ -33,7 +33,7 @@ if __name__ == "__main__":
     strategy = BreadthStrategy()
     network = Network(evaluator, strategy)
 
-    parsedFile = parser.parseFile("E:\\Projects\\turtle\\docs\\examples\\Blocchi.clp")
+    parsedFile = parser.parseFile("E:\\Projects\\turtle\\docs\\examples\\Parentele.clp")
 
     (facts, rules) = builder.build(parsedFile)
     print("building network")
