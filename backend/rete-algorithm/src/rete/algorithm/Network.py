@@ -161,8 +161,8 @@ class Network(object):
 
         # Executes the initial matching ot the network.
 
-        #for fact in facts:
-        #    self.assert_fact(fact)
+        for fact in facts:
+            self.assert_fact(fact)
         return graphs
 
     def recognize_act_iteration(self, next_activation):

@@ -638,8 +638,10 @@ class JoinNode(TestsNode):
                     # which can be rewritten as dict(mapping, key1=value1, key2=value2, ...).
                     # If the two dictionaries have keys in common, then the conflict
                     # is solved in favor of the alpha variables.
+                    def union2(dict1, dict2):
+                        return dict(list(dict1.items()) + list(dict2.items()))
 
-                    new_variables = dict(beta_variables, **alpha_variables)
+                    new_variables = union2(beta_variables, alpha_variables)
 
                     test_passed = True
 
