@@ -7,24 +7,9 @@ from src.rete.algorithm.Network import Network
 from src.rete.algorithm.Nodes import RootNode
 from src.rete.algorithm.ResponseNode import ResponseNode
 from src.rete.algorithm.Strategy import RandomStrategy, BreadthStrategy
+from src.services.ServerServices import transformNetwork, print_response_node
 
 if __name__ == "__main__":
-    def transformNetwork(node):
-        currNode = ResponseNode()
-        if isinstance(node, RootNode):
-            currNode.text.name = "ROOT"
-            currNode.children = map(lambda n: transformNetwork(node.children[n]), node.children)
-            return currNode
-        else:
-            currNode.text.name = node.label
-            currNode.children = map(lambda n: transformNetwork(node.children[n]), node.children)
-            return currNode
-
-    def print_response_node(node, depth):
-        print("\t" * depth + " ", node.text.name)
-        for n in node.children:
-            print_response_node(n, depth + 1)
-
     parser = Parser()
     builder = Builder()
     functionMapper = FunctionMapper()
@@ -33,7 +18,7 @@ if __name__ == "__main__":
     strategy = BreadthStrategy()
     network = Network(evaluator, strategy)
 
-    parsedFile = parser.parseFile("E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\GiocoOtto.clp")
+    parsedFile = parser.parseFile("E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\MissionariCannibali.clp")
 
     (facts, rules) = builder.build(parsedFile)
     print("Building network")
