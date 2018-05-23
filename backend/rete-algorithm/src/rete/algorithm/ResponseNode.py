@@ -1,7 +1,7 @@
 from src.rete.algorithm.Text import Text
 
 
-class ResponseNode():
+class ResponseNode:
     def __init__(self):
         self.__text = Text("")
         self.__children = []

@@ -13,15 +13,17 @@ if __name__ == "__main__":
         currNode = ResponseNode()
         if isinstance(node, RootNode):
             currNode.text.name = "ROOT"
-            currNode.children = map(lambda n: transformNetwork(n), node.children)
+            currNode.children = map(lambda n: transformNetwork(node.children[n]), node.children)
             return currNode
-        elif isinstance(node, None):
-            return None
         else:
-            print(type(node))
             currNode.text.name = node.label
-            currNode.children = map(lambda n: transformNetwork(n), node.children)
+            currNode.children = map(lambda n: transformNetwork(node.children[n]), node.children)
             return currNode
+
+    def print_response_node(node, depth):
+        print("\t" * depth + " ", node.text.name)
+        for n in node.children:
+            print_response_node(n, depth + 1)
 
     parser = Parser()
     builder = Builder()
@@ -37,4 +39,6 @@ if __name__ == "__main__":
     print("building network")
     result = network.build_network(facts, rules)
     for x in result:
-        print(transformNetwork(x.root_node))
+        transformed = transformNetwork(x.root_node)
+        print_response_node(transformed, 0)
+        print("\n\n\n")
