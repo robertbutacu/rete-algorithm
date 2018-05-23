@@ -7,6 +7,13 @@ from src.rete.algorithm.Network import Network
 from src.rete.algorithm.Strategy import RandomStrategy, BreadthStrategy
 
 if __name__ == "__main__":
+    def printNode(node):
+        t = 0
+        for key in node.children:
+            print(t * "\t" + str(key))
+            print(t * "\t" + str(node.children[key].label))
+            t += 1
+
     parser = Parser()
     builder = Builder()
     functionMapper = FunctionMapper()
@@ -21,4 +28,4 @@ if __name__ == "__main__":
     print("building network")
     result = network.build_network(facts, rules)
     for x in result:
-        print(x.root_node.network)
+        printNode(x.root_node)
