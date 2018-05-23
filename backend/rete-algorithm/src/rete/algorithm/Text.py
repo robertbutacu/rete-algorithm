@@ -1,13 +1,11 @@
 class Text():
-    def __init__(self, text):
-        Text.__init__(self)
-
-        self.__text = text
+    def __init__(self, name):
+        self.__name = name
 
     @property
-    def text(self):
-        return self.__text
+    def name(self):
+        return self.__name
 
-    @text.setter
-    def text(self, value):
-        self.__text = value
+    @name.setter
+    def name(self, value):
+        self.__name = value

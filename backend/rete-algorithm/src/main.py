@@ -4,15 +4,24 @@ from src.Evaluator import Evaluator
 from src.functions.FunctionMapper import FunctionMapper
 from src.parser.Parser import Parser
 from src.rete.algorithm.Network import Network
+from src.rete.algorithm.Nodes import RootNode
+from src.rete.algorithm.ResponseNode import ResponseNode
 from src.rete.algorithm.Strategy import RandomStrategy, BreadthStrategy
 
 if __name__ == "__main__":
-    def printNode(node):
-        t = 0
-        for key in node.children:
-            print(t * "\t" + str(key))
-            print(t * "\t" + str(node.children[key].label))
-            t += 1
+    def transformNetwork(node):
+        currNode = ResponseNode()
+        if isinstance(node, RootNode):
+            currNode.text.name = "ROOT"
+            currNode.children = map(lambda n: transformNetwork(n), node.children)
+            return currNode
+        elif isinstance(node, None):
+            return None
+        else:
+            print(type(node))
+            currNode.text.name = node.label
+            currNode.children = map(lambda n: transformNetwork(n), node.children)
+            return currNode
 
     parser = Parser()
     builder = Builder()
@@ -28,4 +37,4 @@ if __name__ == "__main__":
     print("building network")
     result = network.build_network(facts, rules)
     for x in result:
-        printNode(x.root_node)
+        print(transformNetwork(x.root_node))
