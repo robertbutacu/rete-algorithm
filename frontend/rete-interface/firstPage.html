@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="Treant.css" type="text/css" />
+
+</head>
+<body>
+    <div id="overlay" class="overlay">
+        <div class="wrapper">
+            <button onclick="goToExamples()" class="button">SEE EXAMPLES</button>
+            <button  onclick="goToGeneratePage()" class="button">CREATE TREE</button>
+        </div>
+    </div>
+    <div class="content">
+        <div style="width: 20%;">
+            <h3 style="margin-top: 50px; margin-left: 50px">Write your code here:</h3>
+            <textarea class="input" type="text"></textarea>
+            <button id="generateButton" class="generate-button">GENERATE</button>
+        </div>
+        <div class="result-tree">
+            <h1>GENERATED TREE</h1>
+            <div id="tree-simple"></div>
+        </div>
+    </div>
+    <script src="vendor/raphael.js"></script>
+    <script src="Treant.js"></script>
+    <script src="myScript.js"></script>
+
+</body>
+
+</html>

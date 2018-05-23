@@ -70,3 +70,11 @@ fetch("/myJson")
     })
 
 var my_chart = new Treant(simple_chart_config);
+
+function goToExamples(){
+    document.getElementById("overlay").style.display = "none";
+}
+
+function goToGeneratePage(){
+    document.getElementById("overlay").style.display = "none";
+}
