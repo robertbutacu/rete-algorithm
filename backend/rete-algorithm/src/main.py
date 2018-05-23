@@ -33,11 +33,13 @@ if __name__ == "__main__":
     strategy = BreadthStrategy()
     network = Network(evaluator, strategy)
 
-    parsedFile = parser.parseFile("E:\\Projects\\turtle\\docs\\examples\\Parentele.clp")
+    parsedFile = parser.parseFile("E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\GiocoOtto.clp")
 
     (facts, rules) = builder.build(parsedFile)
-    print("building network")
+    print("Building network")
     result = network.build_network(facts, rules)
+
+    print("Network built - working on transforming it!")
     for x in result:
         transformed = transformNetwork(x.root_node)
         print_response_node(transformed, 0)
