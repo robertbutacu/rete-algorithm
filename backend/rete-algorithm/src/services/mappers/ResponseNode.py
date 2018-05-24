@@ -1,3 +1,5 @@
+from flask import jsonify
+
 from src.rete.algorithm.Text import Text
 
 
@@ -45,10 +47,11 @@ class ResponseNode:
 
         for child in self.__children:
             dict_children.append(child.to_dict())
+
         return {"text": self.__text.to_dict(),
                 "children": dict_children,
-                "alpha_memory_node": self.__alpha_memory_node,
-                "activations": self.__activations}
+                "alpha_memory_node": str(self.__alpha_memory_node),
+                "activations": str(self.__activations)}
 
 
 

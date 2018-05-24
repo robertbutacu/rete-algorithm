@@ -11,4 +11,4 @@ class Text:
         self.__name = value
 
     def to_dict(self):
-        return {"name": self.__name}
+        return {"name": str(self.__name)}

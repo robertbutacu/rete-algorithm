@@ -23,5 +23,5 @@ class FileWithStates:
         mapped_states = []
         for state in self.__states:
             mapped_states.append(state.to_dict())
-        return {"text": self.__text, "states": mapped_states}
+        return {"text": str(self.__text), "states": mapped_states}
 

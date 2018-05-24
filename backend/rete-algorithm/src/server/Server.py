@@ -47,8 +47,7 @@ def graph_from_file():
         print("Trying to build network")
         network = build_network(filepath, True)
         print("Finished building network")
-        print(network.to_dict())
-        return redirect(request.url)
+        return jsonify(network.to_dict())
     except Exception as e:
         print(e)
         return redirect(request.url)
