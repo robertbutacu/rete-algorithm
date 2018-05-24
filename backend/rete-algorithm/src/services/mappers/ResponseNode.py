@@ -48,10 +48,14 @@ class ResponseNode:
         for child in self.__children:
             dict_children.append(child.to_dict())
 
-        return {"text": self.__text.to_dict(),
-                "children": dict_children,
-                "alpha_memory_node": str(self.__alpha_memory_node),
-                "activations": str(self.__activations)}
+        if self.__alpha_memory_node is not None:
+            dict_children.append({"text": str(self.__alpha_memory_node), "children": []})
 
+        result_dict = {"text": self.__text.to_dict(),
+                       "children": dict_children}
 
-
+        if str(self.__text.name ) == "ROOT":
+            root_dict = {"activations": self.__activations, "graph": result_dict}
+            return root_dict
+        else:
+            return result_dict

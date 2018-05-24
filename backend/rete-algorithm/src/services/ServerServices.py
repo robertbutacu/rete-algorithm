@@ -51,7 +51,7 @@ def build_network(text, is_with_file):
         return transformed
 
 
-def get_example(example_name):
+def get_example_service(example_name):
     examples = {"1": "E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
                 "2": "E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
                 "3": "E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",

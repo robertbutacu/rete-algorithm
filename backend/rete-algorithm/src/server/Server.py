@@ -3,7 +3,7 @@ import os
 from flask import Flask, request, flash, url_for, session, jsonify
 from werkzeug.utils import redirect, secure_filename
 
-from src.services.ServerServices import build_network
+from src.services.ServerServices import build_network, get_example_service
 from src.services.TransformerServices import print_network
 
 UPLOAD_FOLDER = 'E:\\Projects\\rete-algorithm\\uploads'
@@ -47,16 +47,17 @@ def graph_from_file():
         print("Trying to build network")
         network = build_network(filepath, True)
         print("Finished building network")
-        return jsonify(network.to_dict())
+        network_as_dict = network.to_dict()
+        return jsonify(network_as_dict)
     except Exception as e:
         print(e)
         return redirect(request.url)
 
 
-''' if file and allowed_file(file.filename):
-     file.save(os.path.join("E:\\", file))
-     return redirect(url_for('uploaded_file', filename=file))
-'''
+@app.route('/example/<example>', methods=['POST'])
+def get_example(example):
+    return jsonify(get_example_service(example).to_dict())
+
 
 if __name__ == "__main__":
     app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
