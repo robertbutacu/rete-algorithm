@@ -73,8 +73,10 @@ var my_chart = new Treant(simple_chart_config);
 
 function goToExamples(){
     document.getElementById("overlay").style.display = "none";
+    window.location.href="examplesPage.html";
 }
 
 function goToGeneratePage(){
     document.getElementById("overlay").style.display = "none";
+    window.location.href="createTreePage.html"
 }

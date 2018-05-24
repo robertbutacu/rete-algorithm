@@ -20,43 +20,29 @@
             <button onclick="goToGeneratePage()" class="button"><a href="mainPage.html">SEE EXAMPLES</a></button>
         </div>
     </div> -->
-    <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
+    <nav style="border-radius: 0px;" class="navbar navbar-inverse">
+        <div style="padding-top: 10px; padding-bottom: 10px;" class="container-fluid">
             <div class="navbar-header">
                 <a class="navbar-brand" href="#"> </a>
             </div>
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">RETE ALGORITHM</a>
             </div>
-            <ul class="nav navbar-nav navbar-right">
-                <li class="active">
-                    <a href="#">CREATE TREE</a>
-                </li>
+            <ul style="margin-right: 15px" class="nav navbar-nav navbar-right">
                 <li>
-                    <a href="mainPage.html">SEE EXAMPLES</a>
+                    <a style="color: white;" href="createTreePage.html">CREATE TREE</a>
+                </li>
+                <li class="active">
+                    <a style="color: white;" href="#">SEE EXAMPLES</a>
                 </li>
             </ul>
         </div>
     </nav>
     <div class="container">
         <div class="row">
-            <div class="col-md-3">
-                <center>
-                    <h3 style="margin-top: 50px; margin-bottom: 20px">Write your code here:</h3>
-                </center>
-                <center>
-                    <textarea class="input" type="text"></textarea>
-                </center>
-                <div>
-                    <center>
-                        <button id="generateButton" class="generate-button">GENERATE</button>
-                    </center>
-                </div>
-            </div>
-
-            <div class="col-md-9">
+            <div class="col-md-12">
                 <div class="result-tree">
-                    <h1 id="titlu">GENERATED TREE</h1>
+                    <h1 id="titlu">EXAMPLE TREES</h1>
                     <div id="tree-simple"></div>
                 </div>
             </div>
