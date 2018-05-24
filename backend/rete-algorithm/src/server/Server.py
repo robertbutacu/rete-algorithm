@@ -47,16 +47,12 @@ def graph_from_file():
         print("Trying to build network")
         network = build_network(filepath, True)
         print("Finished building network")
-        return jsonify(network.to_dict())
+        network_as_dict = network.to_dict()
+        return jsonify(network_as_dict)
     except Exception as e:
         print(e)
         return redirect(request.url)
 
-
-''' if file and allowed_file(file.filename):
-     file.save(os.path.join("E:\\", file))
-     return redirect(url_for('uploaded_file', filename=file))
-'''
 
 if __name__ == "__main__":
     app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
