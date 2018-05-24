@@ -11,9 +11,6 @@ from src.services.TransformerServices import transform_states, get_text
 from src.services.mappers.FileWithStates import FileWithStates
 
 
-'''
-
-'''
 def build_network(text, is_with_file):
     parser = Parser()
     builder = Builder()
