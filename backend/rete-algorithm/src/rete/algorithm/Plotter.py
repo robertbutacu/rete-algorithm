@@ -5,14 +5,10 @@
     An expert system shell inspired by CLIPS syntax
     @author Claudio Greco, Daniele Negro, Marco Di Pietro
 """
-from src.rete.algorithm.Nodes import *
+from src.Builder import Builder
 from src.parser.Parser import Parser
 from src.rete.algorithm.Network import Network
-from src.Builder import Builder
-from src.rete.algorithm.Network import Network
 from src.rete.algorithm.Strategy import *
-
-from src.utilities.Timer import Timer
 
 try:
     import networkx as nx
@@ -104,7 +100,7 @@ class Plotter(object):
 if __name__ == '__main__':
     parser = Parser()
 
-    ast = parser.parseFile('../../programs/MissionariNP.clp')
+    ast = parser.parseFile('E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\general-truths.clp')
 
     builder = Builder()
 
@@ -127,6 +123,7 @@ if __name__ == '__main__':
 
     print('Initial agenda:\n', agenda)
 
+    print("Printed agenda")
     start = time.clock()
 
     network.recognize_act_cycle()

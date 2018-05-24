@@ -1,5 +1,4 @@
-
-#!/usr/bin/env python
+# !/usr/bin/env python
 
 """
     TURTLE
@@ -8,10 +7,13 @@
 """
 import copy
 
+import time
+
 from src.ProductionMemory import ProductionMemory
 from src.WorkingMemory import WorkingMemory
 from src.rete.algorithm.Agenda import Agenda
 from src.rete.algorithm.Nodes import RootNode, PNode
+from src.services.mappers.Graph import Graph
 from src.typesystem.TypeSystem import *
 
 
@@ -19,6 +21,7 @@ class Network(object):
     """
     Class for the representation of a RETE network.
     """
+
     def __init__(self, evaluator, strategy):
         # Saves a reference to the Evaluator.
         self.__evaluator = evaluator
@@ -147,6 +150,26 @@ class Network(object):
         self.__alpha_memory_patterns = {}
 
     def build_network(self, facts, rules):
+        def fire_activations(network):
+            def beautify_activations(pm, wm, agenda):
+                result = ""
+                result = result + "Working memory: \n " + str(wm) + "\n"
+                result = result + "Production memory: \n" + str(pm) + "\n"
+                result = result + "Agenda: \n" + str(agenda) + "\n"
+                return result
+
+            pm = network.production_memory
+
+            wm = network.working_memory
+
+            agenda = network.agenda
+
+            network.recognize_act_cycle()
+
+            result = str(
+                "Fired activations: " + str(network.fired_activations) + "\n" + beautify_activations(pm, wm, agenda))
+            return result
+
         graphs = []
         # Resets the network.
         self.reset_network()
@@ -157,12 +180,16 @@ class Network(object):
 
         for rule in rules:
             self.add_rule(rule)
-            graphs.append(copy.deepcopy(self))
+            deep_copy_self = copy.deepcopy(self)
+            graphs.append((fire_activations(deep_copy_self), deep_copy_self))
 
         # Executes the initial matching ot the network.
 
         for fact in facts:
             self.assert_fact(fact)
+            deep_copy_self = copy.deepcopy(self)
+            graphs.append((fire_activations(deep_copy_self), deep_copy_self))
+
         return graphs
 
     def recognize_act_iteration(self, next_activation):
