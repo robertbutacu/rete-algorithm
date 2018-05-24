@@ -14,10 +14,15 @@ def transform_network(node):
         return curr_node
 
 
-def print_response_node(node, depth):
-    print("\t" * depth + " ", node.text.name)
-    for n in node.children:
-        print_response_node(n, depth + 1)
+def print_network(network):
+    def print_response_node(node, depth):
+        print("\t" * depth + " ", node.text.name)
+        for n in node.children:
+            print_response_node(n, depth + 1)
+    for state in network:
+        print_response_node(state, 0)
+
+
 
 
 def transform_states(states):
@@ -27,3 +32,16 @@ def transform_states(states):
         transformed.append(transform_network(state.root_node))
 
     return transformed
+
+
+def get_text(file_name):
+    # Loads the specified file to be read.
+    resource = open(file_name, 'r')
+
+    # Reads the content of the opened file.
+    text = resource.read()
+
+    # Closes the opened file.
+    resource.close()
+
+    return text

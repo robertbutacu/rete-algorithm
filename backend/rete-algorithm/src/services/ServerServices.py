@@ -5,23 +5,11 @@ from src.functions.FunctionMapper import FunctionMapper
 from src.parser.Parser import Parser
 from src.rete.algorithm.Network import Network
 from src.rete.algorithm.Strategy import BreadthStrategy
-from src.services.TransformerServices import transform_states, print_response_node
+from src.services.TransformerServices import transform_states, get_text
 from src.services.mappers.FileWithStates import FileWithStates
 
 
 def build_network(text, is_with_file):
-    def get_text(file_name):
-        # Loads the specified file to be read.
-        resource = open(file_name, 'r')
-
-        # Reads the content of the opened file.
-        text = resource.read()
-
-        # Closes the opened file.
-        resource.close()
-
-        return text
-
     parser = Parser()
     builder = Builder()
     function_mapper = FunctionMapper()
@@ -34,21 +22,27 @@ def build_network(text, is_with_file):
         parsed_file = parser.parseFile(text)
 
         (facts, rules) = builder.build(parsed_file)
-        print("Building network")
+        print("Building network from file")
         result = network.build_network(facts, rules)
 
         print("Network built - working on transforming it!")
+        transformed = transform_states(result)
 
-        return FileWithStates(get_text(text), transform_states(result))
+        print("Transformed - > returning result")
+        return FileWithStates(get_text(text), transformed)
     else:
         parsed_text = parser.parseProgram(text)
         (facts, rules) = builder.build(parsed_text)
 
-        print("Building network")
+        print("Building network from text")
         result = network.build_network(facts, rules)
 
         print("Network built - working on transforming it!")
-        return transform_states(result)
+        transformed = transform_states(result)
+
+        print("Transformed -> returning result")
+
+        return transformed
 
 
 
