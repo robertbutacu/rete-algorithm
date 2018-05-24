@@ -21,25 +21,25 @@ class FunctionMapper(object):
     In particular, it loads the modules containing
     the functions available to the user.
     """
+
     def __init__(self):
         self.__map = {}
 
     def get_method(self, name):
         predicate = Predicates()
-        specialFunction = SpecialFunctions()
+        special_function = SpecialFunctions()
 
         predicates = {"eq": predicate.equal, "neq": predicate.not_equal, "<": predicate.less_than,
                       "<=": predicate.less_equal, ">": predicate.greater_than, ">=": predicate.greater_equal,
                       "and": predicate.logical_and, "or": predicate.logical_or, "not": predicate.not_equal}
 
-        specialFunctions = {"printout": specialFunction.printout, "assert": specialFunction.assertion,
-                            "retract": specialFunction.retract, "bind": specialFunction.bind,
-                            "test": specialFunction.test, "strategy": specialFunction.strategy}
+        special_functions = {"printout": special_function.printout, "assert": special_function.assertion,
+                             "retract": special_function.retract, "bind": special_function.bind,
+                             "test": special_function.test, "strategy": special_function.strategy}
 
         try:
-            if name in specialFunctions:
-                return specialFunctions[name]
-            # Returns the function which presents the specified name.
+            if name in special_functions:
+                return special_functions[name]
             elif name in predicates:
                 return predicates[name]
             else:
