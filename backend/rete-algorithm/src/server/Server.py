@@ -3,7 +3,7 @@ import os
 from flask import Flask, request, flash, url_for, session, jsonify
 from werkzeug.utils import redirect, secure_filename
 
-from src.services.ServerServices import build_network
+from src.services.ServerServices import build_network, get_example_service
 from src.services.TransformerServices import print_network
 
 UPLOAD_FOLDER = 'E:\\Projects\\rete-algorithm\\uploads'
@@ -52,6 +52,11 @@ def graph_from_file():
     except Exception as e:
         print(e)
         return redirect(request.url)
+
+
+@app.route('/example/<example>', methods=['POST'])
+def get_example(example):
+    return jsonify(get_example_service(example).to_dict())
 
 
 if __name__ == "__main__":
