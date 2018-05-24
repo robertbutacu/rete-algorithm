@@ -1,9 +1,7 @@
 import os
-from __builtin__ import file
-from flask import app, Flask, request, flash, url_for
-from werkzeug.utils import redirect, secure_filename
 
-from src.services.ServerServices import build_network
+from flask import Flask, request, flash, url_for
+from werkzeug.utils import redirect, secure_filename
 
 UPLOAD_FOLDER = 'E:\\Projects\\rete-algorithm\\uploads'
 ALLOWED_EXTENSIONS = {'clp'}
@@ -35,9 +33,13 @@ def graph_from_file():
     if 'file' not in request.files:
         flash('No file part')
         return redirect(request.url)
+
+    file = request.files['file']
+
     if file.filename == '':
         flash('No selected file')
         return redirect(request.url)
+    
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
