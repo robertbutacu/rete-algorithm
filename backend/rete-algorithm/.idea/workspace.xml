@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6092a67e-5b9c-4635-9e86-4e418853dbe1" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/Server.py" afterPath="$PROJECT_DIR$/src/server/Server.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/ServerServices.py" afterPath="$PROJECT_DIR$/src/services/ServerServices.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/services/mappers/ResponseNode.py" afterPath="$PROJECT_DIR$/src/services/mappers/ResponseNode.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -37,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ResponseNode.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ResponseNode.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/services/mappers/ResponseNode.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="361">
-              <caret line="57" column="37" lean-forward="false" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
+            <state relative-caret-position="382">
+              <caret line="58" column="35" lean-forward="false" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
               <folding>
                 <element signature="e#0#25#0" expanded="true" />
               </folding>
@@ -93,7 +92,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Server.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Server.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/server/Server.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="361">
@@ -195,9 +194,9 @@
         <option value="$PROJECT_DIR$/src/rete/algorithm/Plotter.py" />
         <option value="$PROJECT_DIR$/src/rete/algorithm/Text.py" />
         <option value="$PROJECT_DIR$/src/services/mappers/FileWithStates.py" />
-        <option value="$PROJECT_DIR$/src/services/mappers/ResponseNode.py" />
         <option value="$PROJECT_DIR$/src/services/ServerServices.py" />
         <option value="$PROJECT_DIR$/src/server/Server.py" />
+        <option value="$PROJECT_DIR$/src/services/mappers/ResponseNode.py" />
       </list>
     </option>
   </component>
@@ -645,7 +644,14 @@
       <option name="project" value="LOCAL" />
       <updated>1527190485573</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="endpoint for network from examples">
+      <created>1527190783683</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1527190783683</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -676,7 +682,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added utilities" />
     <MESSAGE value="added entities" />
     <MESSAGE value="added exceptions" />
     <MESSAGE value="added everything" />
@@ -701,7 +706,8 @@
     <MESSAGE value="think its donezo" />
     <MESSAGE value="various changes" />
     <MESSAGE value="better json" />
-    <option name="LAST_COMMIT_MESSAGE" value="better json" />
+    <MESSAGE value="endpoint for network from examples" />
+    <option name="LAST_COMMIT_MESSAGE" value="endpoint for network from examples" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1039,16 +1045,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/services/mappers/ResponseNode.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="57" column="37" lean-forward="false" selection-start-line="57" selection-start-column="37" selection-end-line="57" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#25#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/services/TransformerServices.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="288">
@@ -1081,6 +1077,16 @@
           <caret line="60" column="0" lean-forward="true" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/services/mappers/ResponseNode.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="58" column="35" lean-forward="false" selection-start-line="58" selection-start-column="35" selection-end-line="58" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
