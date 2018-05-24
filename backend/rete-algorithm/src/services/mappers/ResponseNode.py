@@ -41,8 +41,12 @@ class ResponseNode:
         self.__activations = value
 
     def to_dict(self):
+        dict_children = []
+
+        for child in self.__children:
+            dict_children.append(child.to_dict())
         return {"text": self.__text.to_dict(),
-                "children": self.__children,
+                "children": dict_children,
                 "alpha_memory_node": self.__alpha_memory_node,
                 "activations": self.__activations}
 
