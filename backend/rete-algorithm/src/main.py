@@ -1,0 +1,1 @@
+"E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp"
