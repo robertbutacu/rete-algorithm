@@ -19,6 +19,7 @@ class EvaluateException(BaseException):
     Class for the representation of an exception
     raised during the evaluation of an expression.
     """
+
     def __init__(self, message):
         # Message of the evaluation error.
         self.__message = message
@@ -39,6 +40,7 @@ class ParseException(BaseException):
     Class for the representation of an exception
     raised during the parsing of a program.
     """
+
     def __init__(self, message, line_number, line):
         # Message of the parsing error.
         self.__message = message
@@ -62,4 +64,5 @@ class ParseException(BaseException):
         return self.__line
 
     def __str__(self):
-        return '[SYNTAX ERROR AT LINE ' + str(self.__line_number) + '] ' + self.__message + '\n' + 'Line: \"' + self.__line + '\"'
+        return '[SYNTAX ERROR AT LINE ' + str(
+            self.__line_number) + '] ' + self.__message + '\n' + 'Line: \"' + self.__line + '\"'

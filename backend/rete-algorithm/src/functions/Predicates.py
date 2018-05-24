@@ -18,6 +18,7 @@ class Predicates(Module):
     """
     Class for the representation of the available predicates.
     """
+
     def __init__(self):
         Module.__init__(self)
         self.add_method('eq', self.equal)
