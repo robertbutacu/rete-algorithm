@@ -14,12 +14,12 @@
 </head>
 
 <body>
-    <!-- <div id="overlay" class="overlay">
+    <div id="overlay" class="overlay">
         <div class="wrapper">
             <button onclick="goToExamples()" class="button"><a href="firstPage.html">CREATE TREE</a></button>
             <button onclick="goToGeneratePage()" class="button"><a href="mainPage.html">SEE EXAMPLES</a></button>
         </div>
-    </div> -->
+    </div>
     <nav class="navbar navbar-inverse">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -29,20 +29,34 @@
                 <a class="navbar-brand" href="#">RETE ALGORITHM</a>
             </div>
             <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="firstPage.html">CREATE TREE</a>
-                </li>
                 <li class="active">
-                    <a href="#">SEE EXAMPLES</a>
+                    <a href="#">CREATE TREE</a>
+                </li>
+                <li>
+                    <a href="mainPage.html">SEE EXAMPLES</a>
                 </li>
             </ul>
         </div>
     </nav>
     <div class="container">
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-3">
+                <center>
+                    <h3 style="margin-top: 50px; margin-bottom: 20px">Write your code here:</h3>
+                </center>
+                <center>
+                    <textarea class="input" type="text"></textarea>
+                </center>
+                <div>
+                    <center>
+                        <button id="generateButton" class="generate-button">GENERATE</button>
+                    </center>
+                </div>
+            </div>
+
+            <div class="col-md-9">
                 <div class="result-tree">
-                    <h1 id="titlu">EXAMPLE TREES</h1>
+                    <h1 id="titlu">GENERATED TREE</h1>
                     <div id="tree-simple"></div>
                 </div>
             </div>

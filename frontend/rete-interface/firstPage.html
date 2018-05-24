@@ -3,34 +3,74 @@
 
 <head>
     <meta charset="utf-8" />
-    <title></title>
+    <title>RETE ALGORITHM</title>
     <!-- stylesheets -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Treant.css" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="bootstrap.min.css">
 
 </head>
+
 <body>
-    <div id="overlay" class="overlay">
+    <!-- <div id="overlay" class="overlay">
         <div class="wrapper">
-            <button onclick="goToExamples()" class="button">SEE EXAMPLES</button>
-            <button  onclick="goToGeneratePage()" class="button">CREATE TREE</button>
+            <button onclick="goToExamples()" class="button"><a href="firstPage.html">CREATE TREE</a></button>
+            <button onclick="goToGeneratePage()" class="button"><a href="mainPage.html">SEE EXAMPLES</a></button>
         </div>
+    </div> -->
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"> </a>
+            </div>
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">RETE ALGORITHM</a>
+            </div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="active">
+                    <a href="#">CREATE TREE</a>
+                </li>
+                <li>
+                    <a href="mainPage.html">SEE EXAMPLES</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <center>
+                    <h3 style="margin-top: 50px; margin-bottom: 20px">Write your code here:</h3>
+                </center>
+                <center>
+                    <textarea class="input" type="text"></textarea>
+                </center>
+                <div>
+                    <center>
+                        <button id="generateButton" class="generate-button">GENERATE</button>
+                    </center>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="result-tree">
+                    <h1 id="titlu">GENERATED TREE</h1>
+                    <div id="tree-simple"></div>
+                </div>
+            </div>
+        </div>
+        <br /><br /><br />
     </div>
-    <div class="content">
-        <div style="width: 20%;">
-            <h3 style="margin-top: 50px; margin-left: 50px">Write your code here:</h3>
-            <textarea class="input" type="text"></textarea>
-            <button id="generateButton" class="generate-button">GENERATE</button>
-        </div>
-        <div class="result-tree">
-            <h1>GENERATED TREE</h1>
-            <div id="tree-simple"></div>
-        </div>
+    <div class="footer">
+       <b><p>&copy Facultatea de informatica Iasi</p></b> 
+      
     </div>
+
     <script src="vendor/raphael.js"></script>
     <script src="Treant.js"></script>
     <script src="myScript.js"></script>
-
 </body>
 
 </html>
