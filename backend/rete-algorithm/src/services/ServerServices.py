@@ -1,29 +1,27 @@
-from src.rete.algorithm.Nodes import RootNode
-from src.rete.algorithm.ResponseNode import ResponseNode
+from src.Builder import Builder
+from src.Environment import Environment
+from src.Evaluator import Evaluator
+from src.functions.FunctionMapper import FunctionMapper
+from src.parser.Parser import Parser
+from src.rete.algorithm.Network import Network
+from src.rete.algorithm.Strategy import BreadthStrategy
+from src.services.TransformerServices import transform_states, print_response_node
 
+parser = Parser()
+builder = Builder()
+functionMapper = FunctionMapper()
+environment = Environment()
+evaluator = Evaluator(environment, functionMapper)
+strategy = BreadthStrategy()
+network = Network(evaluator, strategy)
 
-def transform_network(node):
-    curr_node = ResponseNode()
-    if isinstance(node, RootNode):
-        curr_node.text.name = "ROOT"
-        curr_node.children = map(lambda n: transform_network(node.children[n]), node.children)
-        return curr_node
-    else:
-        curr_node.text.name = node.label
-        curr_node.children = map(lambda n: transform_network(node.children[n]), node.children)
-        return curr_node
+parsedFile = parser.parseFile("E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp")
 
+(facts, rules) = builder.build(parsedFile)
+print("Building network")
+result = network.build_network(facts, rules)
 
-def print_response_node(node, depth):
-    print("\t" * depth + " ", node.text.name)
-    for n in node.children:
-        print_response_node(n, depth + 1)
-
-
-def transform_states(states):
-    transformed = []
-
-    for state in states:
-        transformed.append(transform_network(state.root_node))
-
-    return transformed
+print("Network built - working on transforming it!")
+transformed = transform_states(result)
+for t in transformed:
+    print_response_node(t, 0)
