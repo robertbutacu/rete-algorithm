@@ -6,6 +6,7 @@ class ResponseNode:
         self.__text = Text("")
         self.__children = []
         self.__alpha_memory_node = ""
+        self.__activations = ""
 
     @property
     def children(self):
@@ -30,3 +31,14 @@ class ResponseNode:
     @alpha_memory_node.setter
     def alpha_memory_node(self, value):
         self.__alpha_memory_node = value
+
+    @property
+    def activations(self):
+        return self.__activations
+
+    @activations.setter
+    def activations(self, value):
+        self.__activations = value
+
+
+
