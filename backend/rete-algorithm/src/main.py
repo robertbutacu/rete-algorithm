@@ -7,7 +7,7 @@ from src.rete.algorithm.Network import Network
 from src.rete.algorithm.Nodes import RootNode
 from src.rete.algorithm.ResponseNode import ResponseNode
 from src.rete.algorithm.Strategy import RandomStrategy, BreadthStrategy
-from src.services.ServerServices import transformNetwork, print_response_node
+from src.services.ServerServices import transform_network, print_response_node, transform_states
 
 if __name__ == "__main__":
     parser = Parser()
@@ -25,7 +25,7 @@ if __name__ == "__main__":
     result = network.build_network(facts, rules)
 
     print("Network built - working on transforming it!")
-    for x in result:
-        transformed = transformNetwork(x.root_node)
-        print_response_node(transformed, 0)
-        print("\n\n\n")
+    transformed = transform_states(result)
+    for t in transformed:
+        print_response_node(t, 0)
+
