@@ -1,5 +1,4 @@
-
-#!/usr/bin/env python
+# !/usr/bin/env python
 
 """
     TURTLE
@@ -8,10 +7,13 @@
 """
 import copy
 
+import time
+
 from src.ProductionMemory import ProductionMemory
 from src.WorkingMemory import WorkingMemory
 from src.rete.algorithm.Agenda import Agenda
 from src.rete.algorithm.Nodes import RootNode, PNode
+from src.services.mappers.Graph import Graph
 from src.typesystem.TypeSystem import *
 
 
@@ -19,6 +21,7 @@ class Network(object):
     """
     Class for the representation of a RETE network.
     """
+
     def __init__(self, evaluator, strategy):
         # Saves a reference to the Evaluator.
         self.__evaluator = evaluator
@@ -163,6 +166,8 @@ class Network(object):
 
         for fact in facts:
             self.assert_fact(fact)
+            graphs.append(copy.deepcopy(self))
+
         return graphs
 
     def recognize_act_iteration(self, next_activation):

@@ -1,3 +1,5 @@
+import time
+
 from src.Builder import Builder
 from src.Environment import Environment
 from src.Evaluator import Evaluator
@@ -9,19 +11,23 @@ from src.services.TransformerServices import transform_states, get_text
 from src.services.mappers.FileWithStates import FileWithStates
 
 
+'''
+
+'''
 def build_network(text, is_with_file):
     parser = Parser()
     builder = Builder()
     function_mapper = FunctionMapper()
     environment = Environment()
-    evaluator = Evaluator(environment, function_mapper)
     strategy = BreadthStrategy()
-    network = Network(evaluator, strategy)
 
     if is_with_file:
         parsed_file = parser.parseFile(text)
 
         (facts, rules) = builder.build(parsed_file)
+        evaluator = builder.evaluator
+        network = Network(evaluator, strategy)
+
         print("Building network from file")
         result = network.build_network(facts, rules)
 
@@ -33,8 +39,11 @@ def build_network(text, is_with_file):
     else:
         parsed_text = parser.parseProgram(text)
         (facts, rules) = builder.build(parsed_text)
+        evaluator = builder.evaluator
+        network = Network(evaluator, strategy)
 
         print("Building network from text")
+
         result = network.build_network(facts, rules)
 
         print("Network built - working on transforming it!")

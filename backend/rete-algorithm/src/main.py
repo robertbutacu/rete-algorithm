@@ -4,11 +4,10 @@ from src.services.TransformerServices import get_text, print_network
 
 if __name__ == "__main__":
     network = build_network(
-        get_text("E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp"),
+        get_text("E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\general-truths.clp"),
         False)
     print_network(network)
 
-    file_response = build_network("E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
-                                  True)
-    print(file_response.text)
-    print_network(file_response.states)
+    #file_response = build_network("E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\general-truths.clp",
+    #                              True)
+   # print_network(file_response.states)
