@@ -54,7 +54,7 @@ class ResponseNode:
         result_dict = {"text": self.__text.to_dict(),
                        "children": dict_children}
 
-        if str(self.__text.name ) == "ROOT":
+        if str(self.__text.name) == "ROOT":
             root_dict = {"activations": self.__activations, "graph": result_dict}
             return root_dict
         else:
