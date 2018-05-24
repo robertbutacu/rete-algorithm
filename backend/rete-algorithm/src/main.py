@@ -1,24 +1,14 @@
-from src.Builder import Builder
-from src.Environment import Environment
-from src.Evaluator import Evaluator
-from src.functions.FunctionMapper import FunctionMapper
-from src.parser.Parser import Parser
-from src.rete.algorithm.Network import Network
-from src.rete.algorithm.Strategy import RandomStrategy, BreadthStrategy
+"E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp"
+from src.services.ServerServices import build_network
+from src.services.TransformerServices import get_text, print_network
 
 if __name__ == "__main__":
-    parser = Parser()
-    builder = Builder()
-    functionMapper = FunctionMapper()
-    environment = Environment()
-    evaluator = Evaluator(environment, functionMapper)
-    strategy = BreadthStrategy()
-    network = Network(evaluator, strategy)
+    network = build_network(
+        get_text("E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp"),
+        False)
+    print_network(network)
 
-    parsedFile = parser.parseFile("E:\\Projects\\turtle\\docs\\examples\\Blocchi.clp")
-
-    (facts, rules) = builder.build(parsedFile)
-    print("building network")
-    result = network.build_network(facts, rules)
-    for x in result:
-        print(x.root_node.network)
+    file_response = build_network("E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
+                                  True)
+    print(file_response.text)
+    print_network(file_response.states)
