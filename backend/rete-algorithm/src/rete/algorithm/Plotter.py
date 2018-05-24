@@ -123,6 +123,7 @@ if __name__ == '__main__':
 
     print('Initial agenda:\n', agenda)
 
+    print("Printed agenda")
     start = time.clock()
 
     network.recognize_act_cycle()

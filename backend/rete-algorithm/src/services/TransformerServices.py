@@ -30,7 +30,6 @@ def transform_states(states):
     transformed = []
 
     for state in states:
-        #transformed.append(transform_network(state.network.root_node))
         new_state = transform_network(state[1].root_node)
         new_state.activations = state[0]
         transformed.append(new_state)
