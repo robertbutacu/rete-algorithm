@@ -18,7 +18,7 @@ if __name__ == "__main__":
     strategy = BreadthStrategy()
     network = Network(evaluator, strategy)
 
-    parsedFile = parser.parseFile("E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\general-truths.clp")
+    parsedFile = parser.parseFile("E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp")
 
     (facts, rules) = builder.build(parsedFile)
     print("Building network")

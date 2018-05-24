@@ -11,6 +11,8 @@ import os
 from inspect import getmembers, isclass
 
 from src.exceptions.Exceptions import EvaluateException
+from src.functions.Predicates import Predicates
+from src.functions.SpecialFunctions import SpecialFunctions
 
 
 class FunctionMapper(object):
@@ -23,9 +25,25 @@ class FunctionMapper(object):
         self.__map = {}
 
     def get_method(self, name):
+        predicate = Predicates()
+        specialFunction = SpecialFunctions()
+
+        predicates = {"eq": predicate.equal, "neq": predicate.not_equal, "<": predicate.less_than,
+                      "<=": predicate.less_equal, ">": predicate.greater_than, ">=": predicate.greater_equal,
+                      "and": predicate.logical_and, "or": predicate.logical_or, "not": predicate.not_equal}
+
+        specialFunctions = {"printout": specialFunction.printout, "assert": specialFunction.assertion,
+                            "retract": specialFunction.retract, "bind": specialFunction.bind,
+                            "test": specialFunction.test, "strategy": specialFunction.strategy}
+
         try:
+            if name in specialFunctions:
+                return specialFunctions[name]
             # Returns the function which presents the specified name.
-            return self.__map[name]
+            elif name in predicates:
+                return predicates[name]
+            else:
+                return self.__map[name]
         except KeyError:
             # Raises an exception in the case in which the function is not present.
             raise EvaluateException('Unable to find the function ' + name + '!')
