@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, request, flash, url_for, session
+from flask import Flask, request, flash, url_for, session, jsonify
 from werkzeug.utils import redirect, secure_filename
 
 from src.services.ServerServices import build_network
@@ -33,20 +33,25 @@ def graph_from_file():
         return '.' in file and \
                file.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-    file = request.files['inputFile']
+    try:
+        file = request.files['inputFile']
 
-    if file.filename == '':
-        flash('No selected file')
-        print("FILENMAE NAME IS FKING NAKED")
+        if file.filename == '':
+            flash('No selected file')
+            print("FILENMAE NAME IS FKING NAKED")
+            return redirect(request.url)
+        filename = secure_filename(file.filename)
+        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(filepath)
+
+        print("Trying to build network")
+        network = build_network(filepath, True)
+        print("Finished building network")
+        print(network.to_dict())
         return redirect(request.url)
-    filename = secure_filename(file.filename)
-    filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
-    file.save(filepath)
-
-    network = build_network(filepath, True)
-    print_network(network.states)
-    print(network.text)
-    return redirect(request.url)
+    except Exception as e:
+        print(e)
+        return redirect(request.url)
 
 
 ''' if file and allowed_file(file.filename):

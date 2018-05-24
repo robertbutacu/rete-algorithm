@@ -40,5 +40,11 @@ class ResponseNode:
     def activations(self, value):
         self.__activations = value
 
+    def to_dict(self):
+        return {"text": self.__text.to_dict(),
+                "children": self.__children,
+                "alpha_memory_node": self.__alpha_memory_node,
+                "activations": self.__activations}
+
 
 

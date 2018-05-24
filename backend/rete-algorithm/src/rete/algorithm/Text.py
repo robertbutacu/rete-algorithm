@@ -9,3 +9,6 @@ class Text:
     @name.setter
     def name(self, value):
         self.__name = value
+
+    def to_dict(self):
+        return {"name": self.__name}
