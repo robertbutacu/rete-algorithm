@@ -41,9 +41,68 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <div class="result-tree">
-                    <h1 id="titlu">EXAMPLE TREES</h1>
+                <div style="display: flex; flex-direction: row;">
+                      <button style="margin-left: 0px;" class="exemple-button">EXEMPLE 1</button>
+                      <button class="exemple-button">EXEMPLE 2</button>
+                      <button class="exemple-button">EXEMPLE 3</button>
+                      <button class="exemple-button">EXEMPLE 4</button>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div style="display: flex; justify-content: center; align-items: center; margin-top: 15px;">
+                    <!-- <p>CLIPS CODE:</p>    -->
+                    <p style="line-height: 20px;">
+                        (deffacts facts 	<br/>
+                                (some men evil) <br/> 
+                                (all men mortal) <br/>
+                            )<br/>
+                            (defrule r1 "All A are Bs, all Bs are Cs => All As are Cs"
+                              (all ?a ?b)
+                              (all ?b ?c)
+                              =>
+                              (assert (all ?a ?c))
+                              (printout "All " ?a "are " ?b)
+                              (printout "All " ?b "are " ?c)
+                              (printout "==>")
+                              (printout "All " ?a "are " ?c)
+                            )
+                            
+                            
+                            (defrule r2 "All As are Bs, some As are Cs => All Cs are Bs"
+                              (all ?a ?b)
+                              (some ?a ?c)
+                              =>
+                              (assert (all ?c ?b))
+                              (printout "All " ?a "are " ?b)
+                              (printout "Some" ?a "are" ?c)
+                              (printout "==>")
+                              (printout "All " ?c "are " ?b)
+                            )
+                            
+                            (defrule r3 "All As are Bs, no Cs are Bs => No Cs are As"
+                              (all ?a ?b)
+                              (none  ?c ?b)
+                              =>
+                              (assert (none ?c ?a))
+                              (printout "All" ?a "are" ?b)
+                              (printout "No" ?c "are'" ?b)
+                              (printout "==>")
+                              (printout "No" ?c "are" ?a)
+                            )
+                            </p>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div>
+                    <!-- <div>
+                        <span>Activations</span>
+                    </div> -->
+                    <!-- <h3>GENERATED TREE:</h3> -->
                     <div id="tree-simple"></div>
+                    <div style="float: right; margin-top: 15px;">
+                        <button style="margin-right: 20px" class="generate-button">ITERATIA ANTERIOARA</button>
+                        <button class="generate-button">ITERATIA URMATOARE</button>
+                    </div>
                 </div>
             </div>
         </div>

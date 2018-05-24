@@ -129,6 +129,12 @@
     margin-right: -4px;
   }
 
+  .generate-button:hover{
+    background-color: #219dad;
+    color: #fff;
+    transition: all 0.2s ease-in-out;
+  }
+
   body {
   position: relative;
   margin: 0;
@@ -154,6 +160,26 @@ a:link {
   text-decoration: none;
 }
 a:hover {
+  transition: all 0.2s ease-in-out;
   color: white !important; 
   text-decoration: underline;
+}
+
+.exemple-button{
+  color: #fff;
+  padding: 20px;
+  background: #219dad;
+  margin: 10px;
+  cursor: pointer;
+  border-radius: 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: monospace;
+  border: none;
+  text-align: center;
+}
+
+.exemple-button:hover{
+  background: #0d4249;
+  transition: all 0.2s ease-in-out;
 }
