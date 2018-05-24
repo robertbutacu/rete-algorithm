@@ -8,7 +8,7 @@ if __name__ == "__main__":
         False)
     print_network(network)
 
-    #file_response = build_network("E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
-    #                              True)
-    # print(type(file_response))
-    # print_response_node(file_response, 0)
+    file_response = build_network("E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
+                                  True)
+    print(file_response.text)
+    print_network(file_response.states)
