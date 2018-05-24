@@ -100,7 +100,7 @@ class Plotter(object):
 if __name__ == '__main__':
     parser = Parser()
 
-    ast = parser.parseFile('E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\general-truths.clp')
+    ast = parser.parse_file('E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\general-truths.clp')
 
     builder = Builder()
 

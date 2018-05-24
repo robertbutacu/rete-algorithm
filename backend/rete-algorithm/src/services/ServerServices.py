@@ -19,7 +19,7 @@ def build_network(text, is_with_file):
     strategy = BreadthStrategy()
 
     if is_with_file:
-        parsed_file = parser.parseFile(text)
+        parsed_file = parser.parse_file(text)
 
         (facts, rules) = builder.build(parsed_file)
         evaluator = builder.evaluator
