@@ -19,12 +19,11 @@ def hello():
 
 @app.route('/clips-code', methods=['POST'])
 def graph_for_code():
-    code = request.form['code']
-
+    data = request.data
+    code = data.get('code')
     print(code)
 
-    return "welcome"
-    # return build_network(code, False)
+    return redirect(request.url)
 
 
 @app.route('/file', methods=['POST'])

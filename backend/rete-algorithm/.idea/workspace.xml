@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6092a67e-5b9c-4635-9e86-4e418853dbe1" name="Default" comment="test">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/rete/algorithm/Plotter.py" afterPath="$PROJECT_DIR$/src/rete/algorithm/Plotter.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/Server.py" afterPath="$PROJECT_DIR$/src/server/Server.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../frontend/rete-interface/myScript.js" afterPath="$PROJECT_DIR$/../../frontend/rete-interface/myScript.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -92,8 +92,8 @@
       <file leaf-file-name="Server.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/server/Server.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+            <state relative-caret-position="252">
+              <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -199,11 +199,11 @@
         <option value="$PROJECT_DIR$/src/functions/Predicates.py" />
         <option value="$PROJECT_DIR$/src/functions/SpecialFunctions.py" />
         <option value="$PROJECT_DIR$/src/parser/Parser.py" />
-        <option value="$PROJECT_DIR$/src/server/Server.py" />
         <option value="$PROJECT_DIR$/src/main.py" />
         <option value="$PROJECT_DIR$/src/rete/algorithm/Network.py" />
         <option value="$PROJECT_DIR$/src/rete/algorithm/Plotter.py" />
         <option value="$USER_HOME$/AppData/Local/Programs/Python/Python36-32/Lib/site-packages/pydot.py" />
+        <option value="$PROJECT_DIR$/src/server/Server.py" />
       </list>
     </option>
   </component>
@@ -348,7 +348,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Plotter">
+  <component name="RunManager" selected="Python.Server">
     <configuration name="Plotter" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -443,9 +443,9 @@
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.Plotter" />
-        <item index="1" class="java.lang.String" itemvalue="Python.main" />
-        <item index="2" class="java.lang.String" itemvalue="Python.Server" />
+        <item index="0" class="java.lang.String" itemvalue="Python.Server" />
+        <item index="1" class="java.lang.String" itemvalue="Python.Plotter" />
+        <item index="2" class="java.lang.String" itemvalue="Python.main" />
         <item index="3" class="java.lang.String" itemvalue="Python.__init__ (1)" />
         <item index="4" class="java.lang.String" itemvalue="Python.__init__" />
       </list>
@@ -707,7 +707,14 @@
       <option name="project" value="LOCAL" />
       <updated>1527199318066</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="plotter changes">
+      <created>1527224797842</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1527224797842</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -716,8 +723,8 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289183" sideWeight="0.53333336" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.46666667" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289183" sideWeight="0.53541666" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3289183" sideWeight="0.46458334" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289183" sideWeight="0.49583334" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -738,7 +745,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="network is being built" />
     <MESSAGE value="response classes" />
     <MESSAGE value="transform network" />
     <MESSAGE value="print function&#10;small other adjustments" />
@@ -763,7 +769,8 @@
     <MESSAGE value="indentation" />
     <MESSAGE value="renaming" />
     <MESSAGE value="fixed algorithm bug caused by wrong union function used" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed algorithm bug caused by wrong union function used" />
+    <MESSAGE value="plotter changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="plotter changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1117,8 +1124,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/Server.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="16" column="25" lean-forward="true" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
+        <state relative-caret-position="252">
+          <caret line="27" column="0" lean-forward="true" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
