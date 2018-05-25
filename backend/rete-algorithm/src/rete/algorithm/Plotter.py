@@ -5,15 +5,12 @@
     An expert system shell inspired by CLIPS syntax
     @author Claudio Greco, Daniele Negro, Marco Di Pietro
 """
+import networkx as nx
+
 from src.Builder import Builder
 from src.parser.Parser import Parser
 from src.rete.algorithm.Network import Network
 from src.rete.algorithm.Strategy import *
-
-try:
-    import networkx as nx
-except Exception:
-    print('\nWarning! Networkx should be installed.\n')
 
 try:
     import pydot
