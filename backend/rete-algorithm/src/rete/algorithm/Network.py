@@ -195,8 +195,10 @@ class Network(object):
     def recognize_act_iteration(self, next_activation):
         # If the specified activation is valid, then it executes that activation.
         if next_activation is not None:
+            def union2(dict1, dict2):
+                return dict(list(dict1.items()) + list(dict2.items()))
 
-            total_variables = dict(next_activation.variables, **next_activation.assigned_patterns)
+            total_variables = union2(next_activation.variables, next_activation.assigned_patterns)
 
             # Executes each action of the specified activation.
             for action in next_activation.actions:

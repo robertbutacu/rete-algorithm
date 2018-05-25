@@ -15,6 +15,7 @@ class SpecialFunctions(Module):
     """
     Class for the representation of the available special functions.
     """
+
     def __init__(self):
         Module.__init__(self)
         self.add_method('printout', self.printout)

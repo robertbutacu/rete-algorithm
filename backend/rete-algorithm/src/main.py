@@ -4,7 +4,7 @@ from src.services.TransformerServices import get_text, print_network
 
 if __name__ == "__main__":
     network = build_network(
-        get_text("E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\general-truths.clp"),
+        get_text("E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\MissionariCannibali.clp"),
         False)
     print_network(network)
 
