@@ -52,6 +52,7 @@ class ResponseNode:
             if self.__alpha_memory_node:
                 for c in self.__alpha_memory_node.children:
                     print(c.alpha_memory.__str__)
+                    print("test")
                     print(c.alpha_memory.children)
             dict_children.append({"text": str(self.__alpha_memory_node), "children": []})
 
