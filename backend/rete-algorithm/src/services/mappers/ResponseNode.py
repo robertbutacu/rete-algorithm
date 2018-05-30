@@ -48,8 +48,13 @@ class ResponseNode:
         for child in self.__children:
             dict_children.append(child.to_dict())
 
-        if self.__alpha_memory_node is not None:
+        if self.__alpha_memory_node is not None or self.__alpha_memory_node.__str__() != ' Empty Alpha Memory':
+            if self.__alpha_memory_node:
+                for c in self.__alpha_memory_node.children:
+                    print(c.alpha_memory.__str__)
+                    print(c.alpha_memory.children)
             dict_children.append({"text": str(self.__alpha_memory_node), "children": []})
+
 
         result_dict = {"text": self.__text.to_dict(),
                        "children": dict_children}
