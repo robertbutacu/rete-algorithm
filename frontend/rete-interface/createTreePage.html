@@ -43,10 +43,12 @@
                 </center>
                 <div>
                     <center>
-                        <button style="margin-right: 10px" id="uploadButton" class="generate-button">UPLOAD FILE</button>
                         <form action="http://127.0.0.1:5000/clips-code" method="POST">
-                            <button id="generateButton" type="submit" name="button_generate" class="generate-button">GENERATE</button>
+                            <button style="margin-bottom: 10px"id="generateButton" type="submit" name="button_generate" class="generate-button">GENERATE</button>
                         </form>
+                        <h4 style="margin-top: 50px; margin-bottom: 20px"><b>You can upload a clips file:</b></h4>
+                        <input  type="file" id="uploadButton" onchange="myFunction()">
+                        <p id="demo"></p>
                     </center>
                 </div>
             </div>
@@ -75,7 +77,7 @@
 
     <script src="vendor/raphael.js"></script>
     <script src="Treant.js"></script>
-    <script src="myScript.js"></script>
+    <script src="scriptForCreateTreePage.js"></script>
 </body>
 
 </html>
