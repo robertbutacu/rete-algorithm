@@ -51,7 +51,7 @@ class ResponseNode:
         if self.__alpha_memory_node is not None or self.__alpha_memory_node.__str__() != ' Empty Alpha Memory':
             if self.__alpha_memory_node:
                 for c in self.__alpha_memory_node.children:
-                    #print(c.alpha_memory.__str__)
+                    print(c.alpha_memory.__str__)
                     print(c.alpha_memory.children)
             dict_children.append({"text": str(self.__alpha_memory_node), "children": []})
 
