@@ -9,15 +9,37 @@
 }
 .add_style {
     border-radius: 100px;
-    background: #219dad;
     padding: 20px; 
     border-style: solid;
     border-color: black;
     border-width: 1px;
     color: white;
-    /* width: 200px;
-    height: 150px;  */
+    display: flex;
+    width: 175px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.green{
+  background: green;
+}
+ .purple{
+  background: purple;
+}
 
+ .red{
+  background: red;
+}
+
+.yellow{
+  background: darkgoldenrod;
+}
+
+.blue{
+  background: blue;
+}
+.light-gray{
+  background: lightgray;
 }
 
 .overlay{

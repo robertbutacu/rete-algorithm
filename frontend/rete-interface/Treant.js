@@ -1923,6 +1923,10 @@
             node = document.createElement( this.link.href? 'a': 'div' );
 
         node.className = ( !this.pseudo )? TreeNode.CONFIG.nodeHTMLclass: 'pseudo';
+        node.style.display = "flex";
+        node.style.padding = "25px";
+        node.style.paddingLeft= "150px";
+        node.style.paddingRight = "150px"
         if ( this.nodeHTMLclass && !this.pseudo ) {
             node.className += ' ' + this.nodeHTMLclass;
         }

@@ -8,9 +8,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="Treant.css" type="text/css" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <link rel="stylesheet" href="bootstrap.min.css">
-
 </head>
 
 <body>
@@ -32,20 +30,18 @@
             </ul>
         </div>
     </nav>
-    <div style="margin-left: 100px; margin-right: 100px;" class="container">
-        <div class="row">
+    <div style="margin-left: 100px; margin-right: 50px;">
+        <div>
             <div class="col-md-3">
                 <center>
                     <h3 style="margin-top: 50px; margin-bottom: 20px">Write your code here:</h3>
                 </center>
                 <center>
-                    <textarea class="input" type="text"></textarea>
+                    <textarea id="textareaValue" class="input" type="text"></textarea>
                 </center>
                 <div>
                     <center>
-                        <form action="http://127.0.0.1:5000/clips-code" method="POST">
-                            <button style="margin-bottom: 10px"id="generateButton" type="submit" name="button_generate" class="generate-button">GENERATE</button>
-                        </form>
+                        <button onclick="generateTree()" style="margin-bottom: 10px" id="generateButton" type="submit" name="button_generate" class="generate-button">GENERATE</button>
                         <h4 style="margin-top: 50px; margin-bottom: 20px"><b>You can upload a clips file:</b></h4>
                         <input  type="file" id="uploadButton" onchange="myFunction()">
                         <p id="demo"></p>
@@ -56,6 +52,9 @@
                 <div class="result-tree">
                     <h1 id="titlu">GENERATED TREE</h1>
                     <div id="tree-simple"></div>
+                    <div>
+                        <p id="activationText" style="font-size: 20px;"></p>
+                    </div>
                     <div style="float: right; margin-top: 15px;">
                         <button id="previousIteration" style="margin-right: 20px" class="generate-button" >ITERATIA ANTERIOARA</button>
                         <button id="nextIteration" class="generate-button" >ITERATIA URMATOARE</button>
@@ -65,7 +64,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-4">
                 <center><p id="activation_text" style="font-size: 25px"></p></center>
             </div>
         </div>
@@ -77,7 +76,7 @@
 
     <script src="vendor/raphael.js"></script>
     <script src="Treant.js"></script>
-    <script src="scriptForCreateTreePage.js"></script>
+    <script src="generateTreeScript.js"></script>
 </body>
 
 </html>

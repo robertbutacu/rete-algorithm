@@ -24,7 +24,7 @@ def graph_for_code():
             message = request.get_json()
             code = "\n".join(message["code"])
             network = build_network(code, False)
-
+            print(network)
             resp = jsonify(network)
             resp.status_code = 200
             return resp

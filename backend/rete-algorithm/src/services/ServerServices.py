@@ -57,10 +57,11 @@ def build_network(text, is_with_file):
 
 
 def get_example_service(example_name):
-    examples = {"1": "C:\\Users\\uanca\\Desktop\\pbr\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
-                "2": "C:\\Users\\uanca\\Desktop\\pbr\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
-                "3": "C:\\Users\\uanca\\Desktop\\pbr\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
-                "4": "C:\\Users\\uanca\\Desktop\\pbr\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp"}
-    return build_network(examples[example_name], True)
-
+    examples = {"1": "F:\\Facultate\\Anul III\\Semestrul 2\\PBR\\Proiect\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
+                "2": "F:\\Facultate\\Anul III\\Semestrul 2\\PBR\\Proiect\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
+                "3": "F:\\Facultate\\Anul III\\Semestrul 2\\PBR\\Proiect\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
+                "4": "F:\\Facultate\\Anul III\\Semestrul 2\\PBR\\Proiect\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp"}
+    network = build_network(examples[example_name], True)
+    print(network.states[-1])
+    return network
 
