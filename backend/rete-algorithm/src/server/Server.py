@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, request, flash, url_for, session, jsonify, json
+from flask import Flask, request, flash, url_for, session, jsonify, json, abort
 from werkzeug.utils import redirect, secure_filename
 
 from src.services.ServerServices import build_network, get_example_service
@@ -19,18 +19,17 @@ def hello():
 
 @app.route('/clips-code', methods=['POST'])
 def graph_for_code():
-
     if request.headers['Content-Type'] == 'application/json':
-        message = request.get_json()
-        print(str(message))
-       # network = build_network(message[2:-1:1], False)
+        try:
+            message = request.get_json()
+            network = build_network(message["code"], False)
 
-        #network_as_dict = network.to_dict()
-        #resp = jsonify(network_as_dict)
-        #resp.status_code = 200
-
-        #return resp
-        return redirect(request.url)
+            network_as_dict = network.to_dict()
+            resp = jsonify(network_as_dict)
+            resp.status_code = 200
+            return resp
+        except Exception:
+            abort(400)
 
     return redirect(request.url)
 
