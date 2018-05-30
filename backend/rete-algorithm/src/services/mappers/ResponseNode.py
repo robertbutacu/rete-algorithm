@@ -52,7 +52,6 @@ class ResponseNode:
                 result["children"] = []
                 result["HTMLclass"] = "red"
 
-
             if isinstance(node, JoinNode):
                 result["text"] = "JOIN"
                 result["HTMLclass"] = "green"
@@ -92,7 +91,6 @@ class ResponseNode:
             for c in self.__alpha_memory_node.children:
                 children.append(build_lower_levels(c))
             dict_children.append({"text": str(self.__alpha_memory_node), "HTMLclass": "yellow", "children": children})
-
 
         result_dict = {"text": self.__text.to_dict(),
                        "HTMLclass": "blue",

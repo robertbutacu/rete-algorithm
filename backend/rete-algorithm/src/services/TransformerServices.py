@@ -21,6 +21,7 @@ def print_network(network):
         print("\t" * depth + "Alpha memory node: ", node.alpha_memory_node)
         for n in node.children:
             print_response_node(n, depth + 1)
+
     for state in network:
         print("Activations", state.activations)
         print_response_node(state, 0)

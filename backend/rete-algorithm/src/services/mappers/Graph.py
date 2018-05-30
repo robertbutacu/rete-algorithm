@@ -14,7 +14,6 @@ class Graph:
     def network(self, value):
         self.__network = value
 
-
     @property
     def production_memory(self):
         return self.__production_memory

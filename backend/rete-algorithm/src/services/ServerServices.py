@@ -1,8 +1,5 @@
-import time
-
 from src.Builder import Builder
 from src.Environment import Environment
-from src.Evaluator import Evaluator
 from src.functions.FunctionMapper import FunctionMapper
 from src.parser.Parser import Parser
 from src.rete.algorithm.Network import Network
@@ -51,20 +48,18 @@ def build_network(text, is_with_file):
         return transformed
 
 
-# def get_example_service(example_name):
-#     examples = {"1": "E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
-#                 "2": "E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
-#                 "3": "E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
-#                 "4": "E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp"}
-
 def get_example_service(example_name):
+    examples = {"1": "E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
+                "2": "E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
+                "3": "E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
+                "4": "E:\\Projects\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp"}
+    return build_network(examples[example_name], True)
+
+
+'''def get_example_service(example_name):
     examples = {"1": "C:\\Users\\uanca\\Desktop\\pbr\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
                 "2": "C:\\Users\\uanca\\Desktop\\pbr\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
                 "3": "C:\\Users\\uanca\\Desktop\\pbr\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp",
                 "4": "C:\\Users\\uanca\\Desktop\\pbr\\rete-algorithm\\backend\\rete-algorithm\\src\\examples\\Social.clp"}
 
-    return build_network(examples[example_name], True)
-
-
-
-
+    '''
