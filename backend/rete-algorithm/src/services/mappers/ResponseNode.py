@@ -46,22 +46,22 @@ class ResponseNode:
     def to_dict(self):
         def build_lower_levels(node):
             result = {}
-            if isinstance(node, DummyJoinNode):
-                result["text"] = "D.JOIN"
-                alpha_memory_dict = {"text": str(node.alpha_memory)}
-                alpha_memory_children = []
-                for c in node.children:
-                    alpha_memory_children.append(build_lower_levels(c))
-                    alpha_memory_dict["children"] = alpha_memory_children
-                result["children"] = [alpha_memory_dict]
-
             if isinstance(node, JoinNode):
                 result["text"] = "JOIN"
                 alpha_memory_dict = {"text": str(node.alpha_memory)}
                 alpha_memory_children = []
                 for c in node.children:
                     alpha_memory_children.append(build_lower_levels(c))
-                    alpha_memory_dict["children"] = alpha_memory_children
+                alpha_memory_dict["children"] = alpha_memory_children
+                result["children"] = [alpha_memory_dict]
+
+            if isinstance(node, DummyJoinNode):
+                result["text"] = "D.JOIN"
+                alpha_memory_dict = {"text": str(node.alpha_memory)}
+                alpha_memory_children = []
+                for c in node.children:
+                    alpha_memory_children.append(build_lower_levels(c))
+                alpha_memory_dict["children"] = alpha_memory_children
                 result["children"] = [alpha_memory_dict]
 
             if isinstance(node, PNode):
