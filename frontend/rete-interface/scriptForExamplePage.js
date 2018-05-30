@@ -36,7 +36,7 @@ var createGraph = function(response){
 
     if (document.getElementById("clips_code") != null) {
       document.getElementById("clips_code").innerText =
-        jsonResponse.text;
+        jsonResponse.text.join("\n");
     }
   };
 
@@ -51,7 +51,7 @@ var createGraph = function(response){
     document.getElementById("activation_text").innerText =
       jsonResponse.states[currentIteration].activations;
 
-      document.getElementById("clips_code").innerText =jsonResponse.text;
+      document.getElementById("clips_code").innerText =jsonResponse.text.join("\n");
     
   };
 
