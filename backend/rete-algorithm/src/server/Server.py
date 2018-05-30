@@ -64,7 +64,7 @@ def graph_from_file():
         return redirect(request.url)
 
 
-@app.route('/example/<example>', methods=['POST'])
+@app.route('/example/<example>', methods=['GET'])
 def get_example(example):
     return jsonify(get_example_service(example).to_dict())
 
