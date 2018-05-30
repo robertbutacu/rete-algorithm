@@ -14,12 +14,6 @@
 </head>
 
 <body>
-    <!-- <div id="overlay" class="overlay">
-        <div class="wrapper">
-            <button onclick="goToExamples()" class="button"><a href="firstPage.html">CREATE TREE</a></button>
-            <button onclick="goToGeneratePage()" class="button"><a href="mainPage.html">SEE EXAMPLES</a></button>
-        </div>
-    </div> -->
     <nav style="border-radius: 0px;" class="navbar navbar-inverse">
         <div style="padding-top: 10px; padding-bottom: 10px;" class="container-fluid">
             <div class="navbar-header">
@@ -50,7 +44,9 @@
                 <div>
                     <center>
                         <button style="margin-right: 10px" id="uploadButton" class="generate-button">UPLOAD FILE</button>
-                        <button id="generateButton" class="generate-button">GENERATE</button>
+                        <form action="http://127.0.0.1:5000/clips-code" method="POST">
+                            <button id="generateButton" type="submit" name="button_generate" class="generate-button">GENERATE</button>
+                        </form>
                     </center>
                 </div>
             </div>
@@ -58,7 +54,17 @@
                 <div class="result-tree">
                     <h1 id="titlu">GENERATED TREE</h1>
                     <div id="tree-simple"></div>
+                    <div style="float: right; margin-top: 15px;">
+                        <button id="previousIteration" style="margin-right: 20px" class="generate-button" >ITERATIA ANTERIOARA</button>
+                        <button id="nextIteration" class="generate-button" >ITERATIA URMATOARE</button>
+                    </div>
+                   
                 </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <center><p id="activation_text" style="font-size: 25px"></p></center>
             </div>
         </div>
         <br /><br /><br />
