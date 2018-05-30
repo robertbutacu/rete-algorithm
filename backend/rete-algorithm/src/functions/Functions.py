@@ -23,6 +23,7 @@ class Functions(Module):
     """
     Class for the representation of the available functions.
     """
+
     def __init__(self):
         Module.__init__(self)
         self.add_method('+', self.addition)
@@ -80,7 +81,7 @@ class Functions(Module):
 
         elif False in [isinstance(x, NumberType) for x in args]:
             raise EvaluateException('\ requires all parameters to be numbers!')
-        
+
         elif 0 in [x.content for x in args[1:]]:
             raise EvaluateException('division by zero!')
 
@@ -93,7 +94,7 @@ class Functions(Module):
 
         elif False in [isinstance(x, NumberType) for x in args]:
             raise EvaluateException('% requires all parameters to be numbers!')
-        
+
         elif 0 in [x.content for x in args[1:]]:
             raise EvaluateException('module by zero!')
 
@@ -154,7 +155,8 @@ class Functions(Module):
         if not len(args) is 3:
             raise EvaluateException('Substr requires 3 parameters!' + ' (' + str(len(args)) + ' given).')
 
-        elif not isinstance(args[0], StringType) or not isinstance(args[1], IntegerType) or not isinstance(args[2], IntegerType):
+        elif not isinstance(args[0], StringType) or not isinstance(args[1], IntegerType) or not isinstance(args[2],
+                                                                                                           IntegerType):
             raise EvaluateException('Substr requires 1 string and 2 integers!')
 
         return args[0].sub_string(args[1].content, args[2].content)

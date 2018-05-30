@@ -1,0 +1,183 @@
+{
+  "states": [
+    {
+      "activations": "activation1",
+      "code":"aici vreau codul pentru exemplul n",
+      "graph": {
+        "chart": {
+          "container": "#tree-simple"
+        },
+        "nodeStructure": {
+          "text": {
+            "name": "Anca e cea mai draguta 1!"
+          },
+          "children": [
+            {
+              "text": {
+                "name": "Orfan"
+              },
+              "children": [
+                {
+                  "text": {
+                    "name": "Neorfan"
+                  }
+                },
+                {
+                  "text": {
+                    "name": "primul copil"
+                  }
+                }
+              ]
+            },
+            {
+              "text": {
+                "name": "al doilea child"
+              },
+              "children": [
+                {
+                  "text": {
+                    "name": "primul copil"
+                  }
+                },
+                {
+                  "text": {
+                    "name": "primul copil"
+                  }
+                }
+              ]
+            },
+            {
+              "text": {
+                "name": "al 3-lea child"
+              }
+            },
+            {
+              "text": {
+                "name": "al 4-lea child"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "activations": "activation2",
+      "graph": {
+        "chart": {
+          "container": "#tree-simple"
+        },
+        "nodeStructure": {
+          "text": {
+            "name": "Anca e cea mai draguta 2!"
+          },
+          "children": [
+            {
+              "text": {
+                "name": "primul copil"
+              },
+              "children": [
+                {
+                  "text": {
+                    "name": "primul copil"
+                  }
+                },
+                {
+                  "text": {
+                    "name": "primul copil"
+                  }
+                }
+              ]
+            },
+            {
+              "text": {
+                "name": "al doilea child"
+              },
+              "children": [
+                {
+                  "text": {
+                    "name": "primul copil"
+                  }
+                },
+                {
+                  "text": {
+                    "name": "primul copil"
+                  }
+                }
+              ]
+            },
+            {
+              "text": {
+                "name": "al 3-lea child"
+              }
+            },
+            {
+              "text": {
+                "name": "al 4-lea child"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "activations": "activation3",
+      "graph": {
+        "chart": {
+          "container": "#tree-simple"
+        },
+        "nodeStructure": {
+          "text": {
+            "name": "Parent node 3"
+          },
+          "children": [
+            {
+              "text": {
+                "name": "primul copil"
+              },
+              "children": [
+                {
+                  "text": {
+                    "name": "primul copil"
+                  }
+                },
+                {
+                  "text": {
+                    "name": "primul copil"
+                  }
+                }
+              ]
+            },
+            {
+              "text": {
+                "name": "al doilea child"
+              },
+              "children": [
+                {
+                  "text": {
+                    "name": "primul copil"
+                  }
+                },
+                {
+                  "text": {
+                    "name": "primul copil"
+                  }
+                }
+              ]
+            },
+            {
+              "text": {
+                "name": "al 3-lea child"
+              }
+            },
+            {
+              "text": {
+                "name": "al 4-lea child"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "text": "code sample"
+}
