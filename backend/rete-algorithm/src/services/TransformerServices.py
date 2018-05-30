@@ -33,7 +33,7 @@ def transform_states(states):
     for state in states:
         new_state = transform_network(state[1].root_node)
         new_state.activations = state[0]
-        transformed.append(new_state)
+        transformed.append(new_state.to_dict())
 
     return transformed
 

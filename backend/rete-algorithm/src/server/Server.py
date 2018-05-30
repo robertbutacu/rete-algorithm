@@ -22,13 +22,14 @@ def graph_for_code():
     if request.headers['Content-Type'] == 'application/json':
         try:
             message = request.get_json()
-            network = build_network(message["code"], False)
+            code = "\n".join(message["code"])
+            network = build_network(code, False)
 
-            network_as_dict = network.to_dict()
-            resp = jsonify(network_as_dict)
+            resp = jsonify(network)
             resp.status_code = 200
             return resp
-        except Exception:
+        except Exception as e:
+            print(e)
             abort(400)
 
     return redirect(request.url)

@@ -48,7 +48,7 @@ class ResponseNode:
             result = {}
 
             if isinstance(node, PNode):
-                result["text"] = node.name
+                result["text"] = str(node.name)
                 result["children"] = []
                 result["HTMLclass"] = "red"
 
